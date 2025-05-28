@@ -2,9 +2,9 @@ name: Run Selenium Tests
 
 on:
   push:
-    branches: [main, dev]
+    branches: [ dev ]
   pull_request:
-    branches: [main, dev]
+    branches: [ main ]
 
 jobs:
   test:
@@ -24,4 +24,5 @@ jobs:
         uses: browser-actions/setup-chrome@latest
 
       - name: Run Tests with Maven
-        run: mvn clean src/Tasks/Task1.java
+        run: mvn clean test
+        working-directory: ./TestifyJava
